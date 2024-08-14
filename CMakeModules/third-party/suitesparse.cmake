@@ -13,12 +13,16 @@ set(SUITESPARSE_USE_FORTRAN OFF CACHE BOOL "" FORCE)
 include(FetchContent)
 FetchContent_Declare(
   suitesparse
-  URL https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/refs/tags/v7.7.0.tar.gz
+  GIT_REPOSITORY https://github.com/DrTimothyAldenDavis/SuiteSparse.git
+  GIT_TAG v7.7.0 
+  # URL https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/refs/tags/v7.7.0.tar.gz
+  # URL https://drive.google.com/uc?export=download&id=1JrLDUGNOF9tr9aefunw9nFOBAb4X72S-
   EXCLUDE_FROM_ALL
   DOWNLOAD_EXTRACT_TIMESTAMP ON
   FIND_PACKAGE_ARGS NAMES SuiteSparse COMPONENTS SuiteSparse_config cholmod spqr umfpack
 )
 
 FetchContent_MakeAvailable(suitesparse)
+
 
 message(STATUS "Done.")

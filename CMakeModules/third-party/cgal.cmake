@@ -6,8 +6,10 @@ message(STATUS "Downloading CGAL...")
 include(FetchContent)
 FetchContent_Declare(
   cgal
-  URL https://github.com/CGAL/cgal/releases/download/v5.6.1/CGAL-5.6.1-library.tar.xz
-  URL_HASH SHA256=6640f91dad9956764db27440932ac3a2f6269bf8066690f639dd7e995e3e1925
+  GIT_REPOSITORY https://github.com/CGAL/cgal.git
+  GIT_TAG v5.6.1
+  # URL https://github.com/CGAL/cgal/releases/download/v5.6.1/CGAL-5.6.1-library.tar.xz
+  # URL_HASH SHA256=6640f91dad9956764db27440932ac3a2f6269bf8066690f639dd7e995e3e1925
   DOWNLOAD_EXTRACT_TIMESTAMP ON
   # FIND_PACKAGE_ARGS NAMES CGAL COMPONENTS Core
 )

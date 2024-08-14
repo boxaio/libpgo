@@ -8,7 +8,8 @@ set(TBB_DIR)
 
 message(STATUS "conda: $ENV{CONDA_PREFIX}")
 
-if("$ENV{CONDA_PREFIX}" STREQUAL "")
+# if("$ENV{CONDA_PREFIX}" STREQUAL "")
+if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
   if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
     if(EXISTS /opt/intel/oneapi/tbb/latest/lib/cmake/tbb)
       set(TBB_DIR /opt/intel/oneapi/tbb/latest/lib/cmake/tbb)
@@ -39,6 +40,8 @@ if(NOT TBB_DIR)
   include(FetchContent)
   FetchContent_Declare(
     tbb
+    # GIT_REPOSITORY https://github.com/oneapi-src/oneTBB.git
+    # GIT_TAG oneTBB 2021.12.0
     URL https://github.com/oneapi-src/oneTBB/archive/refs/tags/v2021.12.0.tar.gz
     DOWNLOAD_EXTRACT_TIMESTAMP TRUE
   )

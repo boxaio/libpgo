@@ -45,7 +45,7 @@ Lagrangian::Lagrangian(PotentialEnergy_const_p eng, ConstraintFunctions_const_p 
     // [ J 0  ]
 
     for (Eigen::Index i = 0; i < constraintJac.outerSize(); i++) {
-      for (SpMatD::InnerIterator it(constraintJac, i); it; ++it) {
+      for (ES::SpMatD::InnerIterator it(constraintJac, i); it; ++it) {
         entries.emplace_back((int)it.row() + energy->getNumDOFs(), (int)it.col(), 1.0);
         entries.emplace_back((int)it.col(), (int)it.row() + energy->getNumDOFs(), 1.0);
       }

@@ -7,7 +7,9 @@ message(STATUS "Loading nlohmann_json...")
 include(FetchContent)
 FetchContent_Declare(
   nlohmann_json
-  URL https://github.com/nlohmann/json/archive/refs/tags/v3.11.3.tar.gz
+  GIT_REPOSITORY https://github.com/nlohmann/json.git
+  GIT_TAG v3.11.3
+  # URL https://github.com/nlohmann/json/archive/refs/tags/v3.11.3.tar.gz
   EXCLUDE_FROM_ALL
   DOWNLOAD_EXTRACT_TIMESTAMP ON
   FIND_PACKAGE_ARGS NAMES nlohmann_json

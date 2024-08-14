@@ -8,7 +8,9 @@ include(FetchContent)
 # set(FETCHCONTENT_QUIET OFF)
 FetchContent_Declare(
   boost
-  URL https://github.com/boostorg/boost/releases/download/boost-1.85.0/boost-1.85.0-cmake.tar.xz
+  GIT_REPOSITORY https://github.com/boostorg/boost.git
+  GIT_TAG boost-1.85.0
+  # URL https://github.com/boostorg/boost/releases/download/boost-1.85.0/boost-1.85.0-cmake.tar.xz
   EXCLUDE_FROM_ALL
   DOWNLOAD_EXTRACT_TIMESTAMP ON
   OVERRIDE_FIND_PACKAGE

@@ -12,7 +12,9 @@ set(AUTODIFF_BUILD_DOCS OFF CACHE BOOL "Enable the build of the documentation an
 include(FetchContent)
 FetchContent_Declare(
   autodiff_pkg
-  URL https://github.com/autodiff/autodiff/archive/refs/tags/v1.1.2.tar.gz
+  GIT_REPOSITORY https://github.com/autodiff/autodiff.git
+  GIT_TAG v1.1.2
+  # URL https://github.com/autodiff/autodiff/archive/refs/tags/v1.1.2.tar.gz
   EXCLUDE_FROM_ALL
   DOWNLOAD_EXTRACT_TIMESTAMP ON
   FIND_PACKAGE_ARGS NAMES autodiff
